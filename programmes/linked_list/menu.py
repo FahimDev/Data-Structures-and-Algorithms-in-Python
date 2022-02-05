@@ -1,0 +1,2 @@
+class LinedListMenu:
+    pass
