@@ -50,11 +50,16 @@ class Menu:
             sort_menu.menu_window()
 
         elif option == 'B':
+
             search_menu = SearchMenu()
             search_menu.menu_window()
+
         elif option == 'C':
             pass
         elif option == 'D':
-            pass
+
+            graph_menu = GraphMenu()
+            graph_menu.menu_window()
+            
         elif option == 'Exit':
             print("--------------->EXIT<---------------")

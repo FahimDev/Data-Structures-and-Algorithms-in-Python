@@ -3,6 +3,7 @@ from posixpath import split
 from numpy import sort
 from ..sort.menu import SortMenu
 from .binary_search import BinarySearch
+from .binary_search_tree import BinarySearchTree
 
 
 import time
@@ -93,7 +94,16 @@ class SearchMenu:
         elif option == 'C':
             
             print('--------------->Binary Search Tree<---------------')
+            search = BinarySearchTree()
 
+            target = input('Please, input search content:')
+
+            target = search.find_with_bst(target)
+
+            if target:
+                print("Search Content Found!")
+            else:
+                print("Search content doesent exist...")
 
         elif option == 'Exit':
             print("--------------->Back To Main Menu<---------------")
