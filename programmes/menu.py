@@ -2,6 +2,7 @@ from .sort.menu import SortMenu
 from .search.menu import SearchMenu
 from .linked_list.menu import LinedListMenu
 from .graph.menu import GraphMenu
+from .general.menu import GeneralMenu
 
 from . import ObjMapper
 
@@ -34,7 +35,7 @@ class Menu:
 
     def __menu_header(self):
         print("--------------->MENU<---------------")
-        print("Options: (A) Sorting | (B) Search | (C) Linked List | (D) Stack | (D) Queue | (D) Priority Queue | (D) Graph | (Exit) Exit")
+        print("Options: (A) Sorting | (B) Search | (C) Linked List | (D) Stack | (E) Queue | (F) Priority Queue | (G) Graph | (H) General | (Exit) Exit")
         print("Give input option and press ENTER:")
 
 
@@ -56,10 +57,15 @@ class Menu:
 
         elif option == 'C':
             pass
-        elif option == 'D':
+        elif option == 'G':
 
             graph_menu = GraphMenu()
             graph_menu.menu_window()
+
+        elif option == 'H':
+            
+            general_menu = GeneralMenu()
+            general_menu.menu_window()
             
         elif option == 'Exit':
             print("--------------->EXIT<---------------")
