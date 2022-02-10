@@ -17,7 +17,7 @@ class Fibonacci:
             for i in range(fibo_range):
 
                 result = self.__recur_fibo(i)
-                print(i,"----------------------------------------------------------->",result)
+                print("Sent: ",i,"---------------------------------------------------->","return element: ",result)
                 fibo_result.append(result)
 
         else:

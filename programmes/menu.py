@@ -3,6 +3,8 @@ from .search.menu import SearchMenu
 from .linked_list.menu import LinedListMenu
 from .graph.menu import GraphMenu
 from .general.menu import GeneralMenu
+from .linked_list.menu import LinedListMenu
+from .fifo_lifo.menu import FifoLifoMenu
 
 from . import ObjMapper
 
@@ -35,7 +37,7 @@ class Menu:
 
     def __menu_header(self):
         print("--------------->MENU<---------------")
-        print("Options: (A) Sorting | (B) Search | (C) Linked List | (D) Stack | (E) Queue | (F) Priority Queue | (G) Graph | (H) General | (Exit) Exit")
+        print("Options: (A) Sorting | (B) Search | (C) Linked List | (D) FIFO & LIFO | (G) Graph | (H) General | (Exit) Exit")
         print("Give input option and press ENTER:")
 
 
@@ -56,7 +58,15 @@ class Menu:
             search_menu.menu_window()
 
         elif option == 'C':
-            pass
+
+            linked_list = LinedListMenu()
+            linked_list.menu_window()
+
+        elif option == 'D':
+
+            fifo_lifo = FifoLifoMenu()
+            fifo_lifo.menu_window()    
+            
         elif option == 'G':
 
             graph_menu = GraphMenu()
