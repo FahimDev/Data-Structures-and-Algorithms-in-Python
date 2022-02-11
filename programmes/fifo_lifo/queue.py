@@ -10,35 +10,36 @@ class Queue:
     
     
     def __init__(self, max_length:int):
-        self.head = None
-        self.tail = 0
-        self.max_size = max_length
+        #Protected access
+        self._front = None
+        self._tail = 0
+        self._max_size = max_length
 
 
 
 
     def enqueue(self, value):
 
-        if self.max_size == self.tail:
+        if self._max_size == self._tail:
             print("Queue is at its max limit!")
             return False
 
         node = QueueNode(value=value) 
 
-        if self.head is None:
+        if self._front is None:
             
-            self.head = node
-            self.tail += 1
+            self._front = node
+            self._tail += 1
             print(value," added in the Queue")
             return True
 
-        current_queue = self.head
+        current_queue = self._front
 
         while True:
 
             if current_queue.next is None:
                 current_queue.next = node
-                self.tail += 1
+                self._tail += 1
                 print(value," added in the Queue")
                 break
 
@@ -51,17 +52,48 @@ class Queue:
 
     def dequeue(self):
 
-        if self.head is None:
+        if self._front is None:
             print("No elements to Dequeue!")
             return False
 
-        dequeue_value = self.head.data
+        dequeue_value = self._front.data
 
-        if self.head.next is None:
-            self.head = None
+        if self._front.next is None:
+            self._front = None
         else:
-            self.head = self.head.next
+            self._front = self._front.next
+        
+        self._tail += -1
 
         print(dequeue_value," has been removed from the Queue")
+
+        return True
+
+
+
+
+    def peek(self):
+        
+        if self._front is not None:
+            return self._front.data
+        else:
+            print("This Queue is empty!")
+            return None
+
+
+
+
+    def show_queue(self):
+
+        if self._front is None:
+            print("This Queue is empty!")
+
+        current_position = self._front
+
+        while current_position is not None:
+
+            print(current_position.data)
+
+            current_position = current_position.next
 
         return True
