@@ -2,6 +2,7 @@ from posixpath import split
 from .bubble_sort import BubbleSort
 from .selection_sort import SelectionSort
 from .insertion_sort import InsertionSort
+from .merge_sort import MergeSort
 #from ..menu import Menu
 
 import time
@@ -40,7 +41,7 @@ class SortMenu:
     def __menu_header(self):
 
         print("--------------->Sort Options<---------------")
-        print("Options: (A) Bubble Sort | (B) Selection Sort | (C) Insertion Sort | (Exit) Back")
+        print("Options: (A) Bubble Sort | (B) Selection Sort | (C) Insertion Sort | (D) Merge Sort | (Exit) Back")
         print("Give input option and press ENTER:")
 
 
@@ -109,7 +110,13 @@ class SortMenu:
         elif option == 'D':
             
             print('--------------->Merge Sort<---------------')
-            print(ObjMapper.OBJ_MAP)
+
+            merge_sort = MergeSort()
+
+            sorted_response = merge_sort.merge_sort(input_arr)
+
+            print(sorted_response)
+
 
         else:
              print('--------------->Option unknown!<---------------')
